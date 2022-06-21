@@ -1,0 +1,88 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <h3>Thể loại</h3>
+        <div class="row">
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'index' %}">
+                        <div>Tất cả thể loại</div>
+                    </a>
+                </center>
+            </div>
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'MOT' %}">
+                        <div>Xe</div>
+                    </a>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'ELN' %}">
+                        <div>Đồ điện tử</div>
+                    </a>
+                </center>
+            </div>
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'FSH' %}">
+                        <div>Thời trang</div>
+                    </a>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'BMM' %}">
+                        <div>Giải trí</div>
+                    </a>
+                </center>
+            </div>
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'THB' %}">
+                        <div>Giành cho trẻ em</div>
+                    </a>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'HGN' %}">
+                        <div>Đồ gia dụng</div>
+                    </a>
+                </center>
+            </div>
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'SPG' %}">
+                        <div>Đồ thể thao</div>
+                    </a>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'BID' %}">
+                        <div>Sức khỏe và sắc đẹp</div>
+                    </a>
+                </center>
+            </div>
+            <div class="row-item">
+                <center>
+                    <a href="{% url 'category' 'OTH' %}">
+                        <div>Khác</div>
+                    </a>
+                </center>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="heading">
+            <h2>Tạo gian hàng</h2>
+        </div>
+        <form action="{% url 'create' %}" method="POST">
+            <div class="c_form">
+                {% csrf_token %}
+                <div class="c_row">
+                    <div class="row-left">
+                        <label for="title">Tiêu đề <span class="star">*</span></label>
+                    </div>
+                    <div class="row-right">
+                        <input type="text" name="title" required="required" placeholder="Nhập tiêu đề ở đây">
+                    </div>
+                </div>
+                <div class="c_row">
+                    <div class="row-left">
+                        <label for="category">Thể loại</label>
+                    </div>
+                    <div class="row-right">
+                        <select name="category">
+                            <option disabled selected value>-- Lựa chọn --</option>
+                            <option value="MOT">Xe</option>
+                            <option value="ELN">Đồ điện tử</option>
+                            <option value="FSH">Thời trang</option>
+                            <option value="BMM">Giải trí</option>
+                            <option value="HGN">Đồ gia dụng</option>
+                            <option value="SPG">Đồ thể thao</option>
+                            <option value="THB">Dành cho trẻ em</option>
+                            <option value="BID">Sức khỏe và sắc đẹp</option>
+                            <option value="OTH">Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="c_row">
+                    <div class="row-left">
+                        <label for="condition">Tình trạng <span class="star">*</span></label>
+                    </div>
+                    <div class="row-right">
+                        <select name="condition" required="required">
+                            <option disabled selected value>-- Chọn tình trạng --</option>
+                            <option value="New">Mới</option>
+                            <option value="Used">Đã qua sử dụng</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="c_row">
+                    <div class="row-left">
+                        <label for="description">Miêu tả <span class="star">*</span></label>
+                    </div>
+                    <div class="row-right">
+                        <textarea name="description" cols="70" rows="5" required="required" placeholder="Thêm miêu tả vào đây.."></textarea>
+                    </div>
+                </div>
+                <div class="c_row">
+                    <div class="row-left">
+                        <label for="image">đường dẫn ảnh</label>
+                    </div>
+                    <div class="row-right">
+                        <input type="text" name="image" placeholder="e.g., auctions/Images/Listings/image.png">
+                    </div>
+                </div>
+                <div class="c_row">
+                    <div class="row-left">
+                        <label for="s_bid">Bắt đầu đấu giá(VNĐ) <span class="star">*</span></label>
+                    </div>
+                    <div class="row-right">
+                        <input type="number" step="0.1" min="1.00" name="s_bid" required="required" placeholder="e.g., 50.0">
+                    </div>
+                </div>
+                <div class="c_row">
+                    <div class="row-left"></div>
+                    <div class="row-right">
+                        <input type="submit" value="Bày bán" class="btn create-btn Button">
+                        &nbsp;
+                        <a href="{% url 'index' %}" class="btn create-btn" id="cancel">Hủy</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
